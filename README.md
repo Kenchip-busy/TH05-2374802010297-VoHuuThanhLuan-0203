@@ -1,5 +1,5 @@
 # TH05-2374802010297-VoHuuThanhLuan-0203
-# 🛒 Hệ Thống Quản Lý Sản Phẩm
+#  Hệ Thống Quản Lý Sản Phẩm
 
 > **Bài thực hành 05** - Môn Công Nghệ Phần Mềm  
 > **MSSV:** 2374802010297  
@@ -8,13 +8,13 @@
 
 ---
 
-## 📋 Giới Thiệu
+##  Giới Thiệu
 
 Đây là ứng dụng web quản lý sản phẩm và danh mục, được xây dựng bằng **Node.js**, **Express.js** và **MongoDB Atlas**. Ứng dụng hỗ trợ cả **API RESTful** (test bằng Postman) và **giao diện web** (View Engine EJS).
 
 ---
 
-## 🚀 Công Nghệ Sử Dụng
+##  Công Nghệ Sử Dụng
 
 | Công nghệ | Mô tả |
 |-----------|-------|
@@ -27,7 +27,7 @@
 
 ---
 
-## 📁 Cấu Trúc Thư Mục
+##  Cấu Trúc Thư Mục
 
 ```
 TH05-2374802010297-VoHuuThanhLuan-0203/
@@ -42,7 +42,7 @@ TH05-2374802010297-VoHuuThanhLuan-0203/
 
 ---
 
-## ⚙️ Hướng Dẫn Cài Đặt
+##  Hướng Dẫn Cài Đặt
 
 ### 1. Clone dự án
 ```bash
@@ -67,9 +67,9 @@ node app.js
 
 ---
 
-## 📡 API Endpoints
+##  API Endpoints
 
-### 🛍️ Products (Sản phẩm)
+###  Products (Sản phẩm)
 
 | Phương thức | Endpoint | Mô tả |
 |-------------|----------|-------|
@@ -79,7 +79,7 @@ node app.js
 | `DELETE` | `/products/:id` | Xóa sản phẩm theo ID |
 | `GET` | `/products/search/name?name=...` | Tìm kiếm sản phẩm theo tên |
 
-### 📂 Categories (Danh mục)
+###  Categories (Danh mục)
 
 | Phương thức | Endpoint | Mô tả |
 |-------------|----------|-------|
@@ -90,7 +90,7 @@ node app.js
 
 ---
 
-## 🌐 Trang Web
+## Trang Web
 
 | Đường dẫn | Mô tả |
 |-----------|-------|
@@ -101,7 +101,7 @@ node app.js
 
 ---
 
-## 📊 Mô Hình Dữ Liệu (Schema)
+##  Mô Hình Dữ Liệu (Schema)
 
 ### Product (Sản phẩm)
 ```javascript
@@ -125,15 +125,13 @@ node app.js
 
 ---
 
-## 📝 Ghi Chú
+##  Ghi Chú
 
 - Database được kết nối qua **MongoDB Atlas** (cloud)
 - Giỏ hàng sử dụng **Session** (lưu trong 24 giờ)
 - Có thể test API bằng **Postman**
 
 ---
-
-## 👨‍💻 Tác Giả
 
 **Võ Hữu Thanh Luân**   
 🎓 MSSV: 2374802010297
