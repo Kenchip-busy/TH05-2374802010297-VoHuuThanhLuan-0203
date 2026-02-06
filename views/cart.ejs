@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - Tech Store</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-brand">⚡ TECH STORE</a>
+        <a href="/cart" class="nav-cart">🛒 Giỏ hàng (<%= cartCount %>)</a>
+    </nav>
+
+    <div class="container">
+        <a href="/" class="btn btn-back">← Tiếp tục mua sắm</a>
+
+        <h1>🛍️ Giỏ hàng của bạn</h1>
+
+        <% if (cart.length===0) { %>
+            <div class="empty-cart">
+                <div class="empty-cart-icon">🛒</div>
+                <h3>Giỏ hàng đang trống!</h3>
+                <p>Hãy khám phá và thêm những sản phẩm công nghệ tuyệt vời vào giỏ hàng nhé!</p>
+                <a href="/" class="btn btn-add" style="margin-top: 25px; display: inline-flex;">
+                    🔥 Khám phá ngay
+                </a>
+            </div>
+            <% } else { %>
+                <div class="cart-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>📦 Sản phẩm</th>
+                                <th>💰 Giá</th>
+                                <th>🔢 Số lượng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% cart.forEach(function(item) { %>
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            <%= item.name %>
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        <span style="color: #667eea; font-weight: 600;">
+                                            <%= item.price.toLocaleString() %> đ
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="quantity-badge">1</span>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="total-section">
+                    <span class="total-label">💳 Tổng thanh toán:</span>
+                    <span class="total-amount">
+                        <%= total.toLocaleString() %> đ
+                    </span>
+                </div>
+
+                <div style="text-align: right; margin-top: 30px;">
+                    <button class="btn btn-checkout">
+                        🚀 Thanh toán ngay
+                    </button>
+                </div>
+                <% } %>
+    </div>
+</body>
+
+</html>

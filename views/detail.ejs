@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="<%= product.description ? product.description.substring(0, 160) : product.name %>">
+    <title>
+        <%= product.name %> - Tech Store
+    </title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-brand">⚡ TECH STORE</a>
+        <a href="/cart" class="nav-cart">🛒 Giỏ hàng (<%= cartCount %>)</a>
+    </nav>
+
+    <div class="container">
+        <a href="/" class="btn btn-back">← Quay lại danh sách</a>
+
+        <div class="detail-container">
+            <% if(product.images && product.images.length> 0) { %>
+                <div class="image-gallery">
+                    <% product.images.forEach(function(image) { %>
+                        <img src="<%= image %>" alt="<%= product.name %>">
+                        <% }); %>
+                </div>
+                <% } %>
+
+                    <h1>
+                        <%= product.name %>
+                    </h1>
+
+                    <p class="price">💰 <%= product.price.toLocaleString() %> đ</p>
+
+                    <hr>
+
+                    <p class="description-label">📝 Mô tả sản phẩm:</p>
+                    <p style="color: #64748b; line-height: 1.8; margin-bottom: 30px;">
+                        <%= product.description %>
+                    </p>
+
+                    <form action="/cart/add/<%= product._id %>" method="POST">
+                        <button type="submit" class="btn btn-add"
+                            style="width: 100%; max-width: 300px; padding: 18px 30px; font-size: 1.1rem;">
+                            🛒 Thêm vào giỏ hàng
+                        </button>
+                    </form>
+        </div>
+    </div>
+</body>
+
+</html>

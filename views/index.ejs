@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tech Store - Cửa hàng công nghệ hàng đầu với các sản phẩm chất lượng cao">
+    <title>Tech Store - Cửa Hàng Công Nghệ</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-brand">⚡ TECH STORE</a>
+        <a href="/cart" class="nav-cart">
+            🛒 Giỏ hàng (<%= cartCount %>)
+        </a>
+    </nav>
+
+    <div class="container">
+        <h1>🔥 Sản phẩm nổi bật</h1>
+
+        <div class="product-grid">
+            <% products.forEach(function(product) { %>
+                <div class="product-card">
+                    <% if(product.images && product.images.length> 0) { %>
+                        <div class="image-container">
+                            <img src="<%= product.images[0] %>" alt="<%= product.name %>">
+                        </div>
+                        <% } else { %>
+                            <div class="image-container"
+                                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;">
+                                <span style="font-size: 4rem;">📦</span>
+                            </div>
+                            <% } %>
+
+                                <div class="card-content">
+                                    <h3>
+                                        <%= product.name %>
+                                    </h3>
+                                    <p class="price">
+                                        <%= product.price.toLocaleString() %> đ
+                                    </p>
+                                </div>
+
+                                <div class="card-actions">
+                                    <a href="/product/<%= product._id %>" class="btn btn-detail">
+                                        👁️ Xem chi tiết
+                                    </a>
+                                    <form action="/cart/add/<%= product._id %>" method="POST" style="margin: 0;">
+                                        <button type="submit" class="btn btn-add" style="width: 100%;">
+                                            🛒 Thêm vào giỏ
+                                        </button>
+                                    </form>
+                                </div>
+                </div>
+                <% }); %>
+        </div>
+    </div>
+</body>
+
+</html>
