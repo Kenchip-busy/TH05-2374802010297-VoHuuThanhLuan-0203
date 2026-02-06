@@ -1,7 +1,7 @@
 # TH05-2374802010297-VoHuuThanhLuan-0203
 #  Hệ Thống Quản Lý Sản Phẩm
 
-> **Bài thực hành 05** - Môn Công Nghệ Phần Mềm  
+> **Bài thực hành 05** - Môn Lập trình web nâng cao  
 > **MSSV:** 2374802010297  
 > **Họ tên:** Võ Hữu Thanh Luân  
 > **Lớp:** 0203
